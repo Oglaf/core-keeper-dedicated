@@ -35,7 +35,12 @@ rm -f GameID.txt
 
 chmod +x ./CoreKeeperServer
 
+if [ "${DIRECT_CONNECT}" = 1 ]
+then
+DISPLAY=:99 LD_LIBRARY_PATH="$LD_LIBRARY_PATH:../Steamworks SDK Redist/linux64/" ./CoreKeeperServer -batchmode -logfile -world "${WORLD_INDEX}" -worldname "${WORLD_NAME}" -worldseed "${WORLD_SEED}" -gameid "${GAME_ID}" -datapath "${STEAMAPPDATADIR}" -maxplayers "${MAX_PLAYERS}" -logfile CoreKeeperServerLog.txt -season "${SEASON}" -port "${PORT}" -ip "${IP_BIND_ADDRESS}"&
+else
 DISPLAY=:99 LD_LIBRARY_PATH="$LD_LIBRARY_PATH:../Steamworks SDK Redist/linux64/" ./CoreKeeperServer -batchmode -logfile -world "${WORLD_INDEX}" -worldname "${WORLD_NAME}" -worldseed "${WORLD_SEED}" -gameid "${GAME_ID}" -datapath "${STEAMAPPDATADIR}" -maxplayers "${MAX_PLAYERS}" -logfile CoreKeeperServerLog.txt -season "${SEASON}"&
+fi
 
 ckpid=$!
 
