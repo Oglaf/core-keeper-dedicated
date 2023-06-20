@@ -43,10 +43,9 @@ ENV WORLD_INDEX=0 \
 	DATA_PATH="" \
 	MAX_PLAYERS=10 \
 	SEASON=0 \
-    DIRECT_CONNECT="0" \
+	DIRECT_CONNECT="0" \
 	PORT=<unset> \
-    IP_BIND_ADDRESS="0.0.0.0"
-
+	IP_BIND_ADDRESS="0.0.0.0"
 
 # Switch to user
 USER ${USER}
